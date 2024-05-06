@@ -1,0 +1,78 @@
+---
+pagination_next: null
+pagination_prev: null
+id: brand-type
+title: BrandType
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum BrandType {
+  SHOPIFY
+  STANDALONE
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>BrandType.<b>SHOPIFY</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>BrandType.<b>STANDALONE</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Brand`](/types/objects/brand)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CreateBrandInput`](/types/inputs/create-brand-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`UpdateBrandInput`](/types/inputs/update-brand-input)  <Badge class="badge badge--secondary" text="input"/>
+

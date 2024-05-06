@@ -1,0 +1,159 @@
+---
+pagination_next: null
+pagination_prev: null
+id: product
+title: Product
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type Product {
+  id: ID!
+  name: String!
+  brand: Brand!
+  category: String!
+  type: ProductType!
+  price: Float
+  length: ProductLength
+  fitOption: FitOption
+  garmentPlacement: GarmentPlacement
+  sleeveLength: SleeveLength
+  externalId: String
+  status: ProductStatus!
+  images: [ProductImage!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>id</b></code>](#)<Bullet />[`ID!`](/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>name</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>brand</b></code>](#)<Bullet />[`Brand!`](/types/objects/brand) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>category</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>type</b></code>](#)<Bullet />[`ProductType!`](/types/enums/product-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>price</b></code>](#)<Bullet />[`Float`](/types/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>length</b></code>](#)<Bullet />[`ProductLength`](/types/enums/product-length) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>fitOption</b></code>](#)<Bullet />[`FitOption`](/types/enums/fit-option) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>garmentPlacement</b></code>](#)<Bullet />[`GarmentPlacement`](/types/enums/garment-placement) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>sleeveLength</b></code>](#)<Bullet />[`SleeveLength`](/types/enums/sleeve-length) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>externalId</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>status</b></code>](#)<Bullet />[`ProductStatus!`](/types/enums/product-status) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>images</b></code>](#)<Bullet />[`[ProductImage!]`](/types/objects/product-image) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Returned By
+
+[`createProduct`](/api/mutations/create-product)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`product`](/api/queries/product)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`updateProduct`](/api/mutations/update-product)  <Badge class="badge badge--secondary" text="mutation"/>
+
+### Member Of
+
+[`ProductMap`](/types/objects/product-map)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ProductPage`](/types/objects/product-page)  <Badge class="badge badge--secondary" text="object"/>
+

@@ -1,7 +1,7 @@
 {
-  "name": "graphql-markdown-template",
+  "name": "my-website",
   "homepage": "https://graphql-markdown.github.io",
-  "version": "1.24.0",
+  "version": "0.0.0",
   "private": true,
   "bugs": {
     "url": "https://github.com/graphql-markdown/graphql-markdown/issues"

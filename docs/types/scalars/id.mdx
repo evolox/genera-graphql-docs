@@ -1,0 +1,61 @@
+---
+pagination_next: null
+pagination_prev: null
+id: id
+title: ID
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+
+
+```graphql
+scalar ID
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`attachBrandToUser`](/api/mutations/attach-brand-to-user)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`brand`](/api/queries/brand)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`Brand`](/types/objects/brand)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`brandUsers`](/api/queries/brand-users)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`CreateModelImageInput`](/types/inputs/create-model-image-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CreateProductImageInput`](/types/inputs/create-product-image-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CreateProductInput`](/types/inputs/create-product-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CreateTryOnInput`](/types/inputs/create-try-on-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`deleteBrand`](/api/mutations/delete-brand)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`deleteModel`](/api/mutations/delete-model)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`deleteModelImage`](/api/mutations/delete-model-image)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`deleteModels`](/api/mutations/delete-models)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`deleteProduct`](/api/mutations/delete-product)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`deleteProductImage`](/api/mutations/delete-product-image)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`detachBrandFromUser`](/api/mutations/detach-brand-from-user)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`getTryOnResult`](/api/queries/get-try-on-result)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`model`](/api/queries/model)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`Model`](/types/objects/model)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ModelImage`](/types/objects/model-image)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`product`](/api/queries/product)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`Product`](/types/objects/product)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ProductFilters`](/types/inputs/product-filters)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ProductImage`](/types/objects/product-image)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`updateBrand`](/api/mutations/update-brand)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`updateModel`](/api/mutations/update-model)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`updateModelImage`](/api/mutations/update-model-image)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`UpdateModelImageInput`](/types/inputs/update-model-image-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`updateProduct`](/api/mutations/update-product)  <Badge class="badge badge--secondary" text="mutation"/><Bullet />[`user`](/api/queries/user)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`User`](/types/objects/user)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`userBrands`](/api/queries/user-brands)  <Badge class="badge badge--secondary" text="query"/>
+
