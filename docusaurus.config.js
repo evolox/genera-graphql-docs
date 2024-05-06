@@ -7,7 +7,7 @@ const lightCodeTheme = themes.github,
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My GraphQL documentation",
+  title: "Genera GraphQL Documentation",
   tagline: "GraphQL-Markdown is cool",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/genera-graphql-docs/",
