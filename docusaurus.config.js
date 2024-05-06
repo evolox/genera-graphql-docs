@@ -15,7 +15,7 @@ const config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
   organizationName: "evolox", // Usually your GitHub org/user name.
-  projectName: "genera-docs", // Usually your repo name.
+  projectName: "genera-graphql-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
   trailingSlash: false,
   plugins: ["@graphql-markdown/docusaurus"], // See .graphqlrc for configuration
