@@ -40,14 +40,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "GraphQL-Markdown",
+        title: "Genera",
         logo: {
           alt: "graphql-markdown",
           src: "img/graphql-markdown.svg",
         },
         items: [
           {
-            href: "https://github.com/graphql-markdown/graphql-markdown",
+            href: "https://github.com/evolox/genera-graphql-docs",
             label: "GitHub",
             position: "right",
           },
@@ -56,7 +56,7 @@ const config = {
       footer: {
         style: "light",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} My Website, Inc. Built with GraphQL-Markdown & Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Genera`,
       },
       prism: {
         theme: lightCodeTheme,
