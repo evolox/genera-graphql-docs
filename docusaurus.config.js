@@ -10,12 +10,14 @@ const config = {
   title: "My GraphQL documentation",
   tagline: "GraphQL-Markdown is cool",
   url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  baseUrl: "/genera-graphql-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
-  organizationName: "graphql-markdown", // Usually your GitHub org/user name.
-  projectName: "graphql-markdown-template", // Usually your repo name.
+  organizationName: "evolox", // Usually your GitHub org/user name.
+  projectName: "genera-docs", // Usually your repo name.
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
   plugins: ["@graphql-markdown/docusaurus"], // See .graphqlrc for configuration
   presets: [
     [
@@ -29,9 +31,9 @@ const config = {
         },
         theme: {
           customCss: "./src/css/custom.css",
-        }
-      })
-    ]
+        },
+      }),
+    ],
   ],
 
   themeConfig:
@@ -41,26 +43,26 @@ const config = {
         title: "GraphQL-Markdown",
         logo: {
           alt: "graphql-markdown",
-          src: "img/graphql-markdown.svg"
+          src: "img/graphql-markdown.svg",
         },
         items: [
           {
             href: "https://github.com/graphql-markdown/graphql-markdown",
             label: "GitHub",
-            position: "right"
-          }
-        ]
+            position: "right",
+          },
+        ],
       },
       footer: {
         style: "light",
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} My Website, Inc. Built with GraphQL-Markdown & Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()} My Website, Inc. Built with GraphQL-Markdown & Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
-      }
-    })
+        darkTheme: darkCodeTheme,
+      },
+    }),
 };
 
 module.exports = config;
