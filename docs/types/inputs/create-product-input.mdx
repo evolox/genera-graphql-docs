@@ -5,44 +5,73 @@ id: create-product-input
 title: CreateProductInput
 ---
 
+export const Bullet = () => (
+  <>
+    <span
+      style={{
+        fontWeight: "normal",
+        fontSize: ".5em",
+        color: "var(--ifm-color-secondary-darkest)",
+      }}
+    >
+      &nbsp;●&nbsp;
+    </span>
+  </>
+);
 
+export const SpecifiedBy = (props) => (
+  <>
+    Specification
+    <a
+      className="link"
+      style={{ fontSize: "1.5em", paddingLeft: "4px" }}
+      target="_blank"
+      href={props.url}
+      title={"Specified by " + props.url}
+    >
+      ⎘
+    </a>
+  </>
+);
 
+export const Badge = (props) => (
+  <>
+    <span className={props.class}>{props.text}</span>
+  </>
+);
 
-export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+import { useState } from "react";
 
-export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
-
-export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
-
-import { useState } from 'react';
-
-export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+export const Details = ({
+  dataOpen,
+  dataClose,
+  children,
+  startOpen = false,
+}) => {
   const [open, setOpen] = useState(startOpen);
   return (
-    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+    <details
+      {...(open ? { open: true } : {})}
+      className="details"
+      style={{
+        border: "none",
+        boxShadow: "none",
+        background: "var(--ifm-background-color)",
+      }}
+    >
       <summary
         onClick={(e) => {
           e.preventDefault();
           setOpen((open) => !open);
         }}
-        style={{ listStyle:'none' }}
+        style={{ listStyle: "none" }}
       >
-      {open ? dataOpen : dataClose}
+        {open ? dataOpen : dataClose}
       </summary>
       {open && children}
     </details>
   );
 };
-
-
-
-
-
-
-
-
-No description
-
 
 ```graphql
 input CreateProductInput {
@@ -60,82 +89,64 @@ input CreateProductInput {
 }
 ```
 
-
-
-
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>name</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>name</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>brandId</b></code>](#)<Bullet />[`ID!`](/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
+Name is a required field. It is a string that represents the name of the product. You can use real product names from your catalog or use your imagination. E.g. "Jacquard knitted cardigan", "Slim fit jeans", "Cotton t-shirt".
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>category</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
+>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>type</b></code>](#)<Bullet />[`ProductType!`](/types/enums/product-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>brandId</b></code>](#)<Bullet />[`ID!`](/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>price</b></code>](#)<Bullet />[`Float`](/types/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
+Brand ID is a required field. You need to use your brand's ID to create a product. You have to receive this ID from GENERA team. E.g. "5f4f3b4c-7b3b-4b3b-8b3b-3b3b3b3b3b3b".
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>length</b></code>](#)<Bullet />[`ProductLength`](/types/enums/product-length) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
+>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>fitOption</b></code>](#)<Bullet />[`FitOption`](/types/enums/fit-option) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>category</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>garmentPlacement</b></code>](#)<Bullet />[`GarmentPlacement`](/types/enums/garment-placement) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
+It's product category. E.g. "Cardigan", "Jeans", "T-shirt".
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>sleeveLength</b></code>](#)<Bullet />[`SleeveLength`](/types/enums/sleeve-length) <Badge class="badge badge--secondary" text="enum"/> 
-> 
-> 
-> 
-> 
+>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>externalId</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>type</b></code>](#)<Bullet />[`ProductType!`](/types/enums/product-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/>
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>externalUrl</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
-> 
-> 
-> 
-> 
+Type is a crucial and required field for generation process. It defines the type of the product. E.g. "TOP", "BOTTOM".
 
+>
 
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>price</b></code>](#)<Bullet />[`Float`](/types/scalars/float) <Badge class="badge badge--secondary" text="scalar"/>
 
+Optional field that represents the real price of the product.
 
+>
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>length</b></code>](#)<Bullet />[`ProductLength`](/types/enums/product-length) <Badge class="badge badge--secondary" text="enum"/>
+
+Optional field that represents the length of the product. It's is preferable to have that field set for your product because it helps to improve try on quality.
+
+>
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>fitOption</b></code>](#)<Bullet />[`FitOption`](/types/enums/fit-option) <Badge class="badge badge--secondary" text="enum"/>
+
+>
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>garmentPlacement</b></code>](#)<Bullet />[`GarmentPlacement`](/types/enums/garment-placement) <Badge class="badge badge--secondary" text="enum"/>
+
+>
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>sleeveLength</b></code>](#)<Bullet />[`SleeveLength`](/types/enums/sleeve-length) <Badge class="badge badge--secondary" text="enum"/>
+
+>
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>externalId</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/>
+
+>
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateProductInput.<b>externalUrl</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/>
+
+>
 
 ### Member Of
 
-[`createProduct`](/api/mutations/create-product)  <Badge class="badge badge--secondary" text="mutation"/>
-
+[`createProduct`](/api/mutations/create-product) <Badge class="badge badge--secondary" text="mutation"/>
