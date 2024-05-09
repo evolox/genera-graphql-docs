@@ -1,13 +1,3 @@
----
-id: intro
-slug: /
-title: Introduction
-pagination_next: null
-pagination_prev: null
-sidebar_position: 1
-hide_table_of_contents: true
----
-
 # Introduction
 
 # Welcome to GraphQL API Genera Documentation

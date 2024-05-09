@@ -41,7 +41,7 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+This input is used to update an existing product. All fields are optional. You can update only the fields you need. If you don't want to update a field, just don't pass it in the input.
 
 
 ```graphql
@@ -66,55 +66,56 @@ input UpdateProductInput {
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>name</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> String representation of the name of the product. You can use real product names from your catalog or use your imagination. E.g. 'Jacquard knitted cardigan', 'Slim fit jeans', 'Cotton t-shirt'.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>category</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Product category. Can be any non-empty string. E.g. 'Cardigan', 'Jeans', 'T-shirt'.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>type</b></code>](#)<Bullet />[`ProductType`](/types/enums/product-type) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
-> 
+> Type is a crucial and required for generation process. It defines the type of the product. E.g. 'TOP', 'BOTTOM'.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>price</b></code>](#)<Bullet />[`Float`](/types/scalars/float) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Represents the real price of the product. In USD, e.g. 49.99.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>length</b></code>](#)<Bullet />[`ProductLength`](/types/enums/product-length) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
-> 
+> Represents the length of the product. It's is preferable to have that field set for your product because it helps to improve try on quality.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>fitOption</b></code>](#)<Bullet />[`FitOption`](/types/enums/fit-option) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
-> 
+> Represents how product should fit on the body. It helps our algorithm to generate better try on results with desired product fit.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>garmentPlacement</b></code>](#)<Bullet />[`GarmentPlacement`](/types/enums/garment-placement) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
-> 
+> Represents the placement of the garment on the body. Please choose the most suitable option for your product. 'STRAPLESS', and 'SHOULDERS' should'
+> be applied only for tops. 'HIGH_WAIST', 'LOW_WAIST', and 'REGULAR_WAIST' should be applied only for bottoms.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>sleeveLength</b></code>](#)<Bullet />[`SleeveLength`](/types/enums/sleeve-length) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
-> 
+> It represents the length of the sleeve. It helps our algorithm to generate better try on results with desired sleeve length.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>externalUrl</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> It is an url to the marketplace, shop, etc.
 > 
 
 

@@ -1,6 +1,6 @@
-label: Types
-position: 5
+label: Example
+position: 3
 className: graphql-markdown-api-section
 link: null
 collapsible: true
-collapsed: true
+collapsed: false

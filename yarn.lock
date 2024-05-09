@@ -1401,7 +1401,7 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-docs@3.3.2":
+"@docusaurus/plugin-content-docs@3.3.2", "@docusaurus/plugin-content-docs@^3.3.2":
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-docs/-/plugin-content-docs-3.3.2.tgz#dadfbb94acfb0b74fae12db51f425c4379e30087"
   integrity sha512-Dm1ri2VlGATTN3VGk1ZRqdRXWa1UlFubjaEL6JaxaK7IIFqN/Esjpl+Xw10R33loHcRww/H76VdEeYayaL76eg==

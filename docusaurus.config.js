@@ -9,7 +9,7 @@ const lightCodeTheme = themes.github,
 const config = {
   title: "Genera GraphQL Documentation",
   tagline: "GraphQL API is cool",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://www.genera.space/",
   baseUrl: "/genera-graphql-docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -18,7 +18,7 @@ const config = {
   projectName: "genera-graphql-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
   trailingSlash: false,
-  plugins: ["@graphql-markdown/docusaurus"], // See .graphqlrc for configuration
+  plugins: ["@graphql-markdown/docusaurus"],
   presets: [
     [
       "classic",
@@ -40,10 +40,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Genera",
         logo: {
-          alt: "graphql-markdown",
-          src: "img/graphql-markdown.svg",
+          alt: "Genera Logo",
+          src: "img/genera_logo.svg",
         },
         items: [
           {
