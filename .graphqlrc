@@ -2,9 +2,10 @@ schema: "https://brand-service.api.genera.space/graphql"
 extensions:
   graphql-markdown:
     baseURL: "."
-    homepage: "static/index.md"
+    homepage: "docs/index.md"
     loaders:
       UrlLoader: "@graphql-tools/url-loader"
+    diffMethod: "schema-diff"
     docOptions:
       frontMatter:
         pagination_next: null
