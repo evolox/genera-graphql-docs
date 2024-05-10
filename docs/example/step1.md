@@ -12,6 +12,8 @@ For successful try on generation you need to provide us multiple products or ful
 Firstly, you need to create product with product image. You can do this by using the `createProduct` mutation.
 At this step we will only need product id to create image for it and generate try on.
 
+See full documentation for `createProduct` mutation [here](/api/mutations/create-product).
+
 ```graphql
 mutation {
   createProduct(
@@ -34,6 +36,8 @@ mutation {
 After successfully creating a product you need to create product image with returned newly created `product.id`.
 Please consider that we are using `Upload`. It's not part of the GraphQL specification itself, but is an extension provided by some GraphQL server implementations, such as Apollo Server.
 You can use some libraries like `apollo-upload-client` to send files to the server. Or you can use `fetch` or `axios` to send files to the server with `multipart/form-data` content type.
+
+See full documentation for `createProductImage` mutation [here](/api/mutations/create-product-image).
 
 ```graphql
 mutation {

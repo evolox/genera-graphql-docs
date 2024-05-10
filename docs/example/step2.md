@@ -13,6 +13,8 @@ For our example we will be using `TOTAL_LOOK` product - 'suit'. If you want crea
 
 You need to provide `product.id` from the previous step and some additional user parameters:
 
+See full documentation for `createProductImage` mutation [here](/api/mutations/create-try-on).
+
 ```graphql
 mutation {
   createTryOn(
@@ -33,6 +35,8 @@ mutation {
 
 After successful mutation execution you will get `taskId` which you can use to get try on result. You need to poll the `getTryOn` query to get the result.
 If you are using Apollo Client you can use `pollInterval` option to poll the server with a specific interval.
+
+See full documentation for `createProductImage` mutation [here](/api/queries/get-try-on-result).
 
 ```graphql
 query {
