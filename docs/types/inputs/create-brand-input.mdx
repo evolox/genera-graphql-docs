@@ -41,7 +41,7 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+This input is used to create a new brand. The brand is an entity that represents a brand or organization in Genera system.
 
 
 ```graphql
@@ -60,19 +60,19 @@ input CreateBrandInput {
 #### [<code style={{ fontWeight: 'normal' }}>CreateBrandInput.<b>name</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Name is required field. It's a string that represents the name of the brand. E.g. 'Zara', 'H&M', 'Nike'.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>CreateBrandInput.<b>type</b></code>](#)<Bullet />[`BrandType`](/types/enums/brand-type) <Badge class="badge badge--secondary" text="enum"/> 
 > 
 > 
-> 
+> Type defines the type of the brand. E.g. 'SHOPIFY', 'STANDALONE'.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>CreateBrandInput.<b>externalId</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Reference to a brand in your system.
 > 
 
 

@@ -41,7 +41,7 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Paginated data of users.
 
 
 ```graphql
@@ -60,19 +60,19 @@ type UserPage implements PageData {
 #### [<code style={{ fontWeight: 'normal' }}>UserPage.<b>items</b></code>](#)<Bullet />[`[User!]!`](/types/objects/user) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
-> 
+> Array of Users. Number of items depends on the 'limit' and 'page' parameters.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UserPage.<b>totalPages</b></code>](#)<Bullet />[`Int!`](/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Total number of pages.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UserPage.<b>hasNextPage</b></code>](#)<Bullet />[`Boolean!`](/types/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Flag that indicates if there are more pages.
 > 
 
 ### Interfaces

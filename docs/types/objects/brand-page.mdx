@@ -41,7 +41,7 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-No description
+Paginated data of brands.
 
 
 ```graphql
@@ -60,19 +60,19 @@ type BrandPage implements PageData {
 #### [<code style={{ fontWeight: 'normal' }}>BrandPage.<b>items</b></code>](#)<Bullet />[`[Brand!]!`](/types/objects/brand) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
-> 
+> Array of Brands. Number of items depends on the 'limit' and 'page' parameters.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>BrandPage.<b>totalPages</b></code>](#)<Bullet />[`Int!`](/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Total number of pages.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>BrandPage.<b>hasNextPage</b></code>](#)<Bullet />[`Boolean!`](/types/scalars/boolean) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> 
+> Flag that indicates if there are more pages.
 > 
 
 ### Interfaces
