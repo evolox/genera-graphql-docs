@@ -49,7 +49,9 @@ It has a lot of fields that help to generate better try on results. The more fie
 type Product {
   id: ID!
   name: String!
-  brand: Brand!
+  brand: Brand
+  brandDisplayName: String
+  private: Boolean
   category: String!
   type: ProductType!
   price: Float
@@ -81,10 +83,22 @@ type Product {
 > Name is a string that represents the name of the product. E.g. 'Jacquard knitted cardigan', 'Slim fit jeans', 'Cotton t-shirt'.
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Product.<b>brand</b></code>](#)<Bullet />[`Brand!`](/types/objects/brand) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>brand</b></code>](#)<Bullet />[`Brand`](/types/objects/brand) <Badge class="badge badge--secondary" text="object"/> 
 > 
 > 
 > That field represents the relation to some brand. Product should be connected to brand.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>brandDisplayName</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> That field represents brand name if product is created for the member.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Product.<b>private</b></code>](#)<Bullet />[`Boolean`](/types/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> That field defines if product will be visible in the list of all products.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>Product.<b>category</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 

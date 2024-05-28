@@ -1,51 +1,66 @@
 ---
 id: step2
-title: Step 2. Create Try On
+title: Step 2. Create a model
 sidebar_position: 3
-pagination_next: null
 hide_table_of_contents: true
 ---
 
-# Step 2. Create Try On
+# Step 2. Create a model
 
-After creating product and product image you can generate try on by using the `generateTryOn` mutation.
-For our example we will be using `TOTAL_LOOK` product - 'suit'. If you want create try on with different combinations of tops and bottoms you will have to provide multiple products IDs as values to corresponding fields.
+Model creation could be done earlier than product creation. There is no strict sequence of steps. You can create a model at any time as long as you pass the model to the try on generation mutation.
 
-You need to provide `product.id` from the previous step and some additional user parameters:
+To create a model you need to use the `createModel` mutation. You need to provide the model name and some additional body parameters:
 
-See full documentation for `createProductImage` mutation [here](/api/mutations/create-try-on).
+See full documentation for `createModel` mutation [here](/api/mutations/create-model).
 
 ```graphql
 mutation {
-  createTryOn(
+  createModel(
     input: {
-      selfiePhoto: <File, multipart/form-data> # Same Upload scalar as for product image
-      topProductId: <PRODUCT_ID>
+      name: "John",
       gender: "MALE"
       bodyType: "RECTANGLE"
       height: 180
       weight: 80
       age: 30
-    }
-  ) {
-    taskID
+      }
+  ){
+    id
   }
-}
 ```
 
-After successful mutation execution you will get `taskId` which you can use to get try on result. You need to poll the `getTryOn` query to get the result.
-If you are using Apollo Client you can use `pollInterval` option to poll the server with a specific interval.
+After successful mutation execution you need to create a model image with returned newly created `model.id`. Logic is the same as for product image creation.
 
-See full documentation for `createProductImage` mutation [here](/api/queries/get-try-on-result).
+We are using image types to define the model image. You should use `HEAD` for selfie upload.
+
+See full documentation for `createModelImage` mutation [here](/api/mutations/create-model-image).
+
+```graphql
+mutation {
+  createModelImage(
+    input: {
+      modelId: <MODEL_ID>
+      data: <File, multipart/form-data>
+      type: "HEAD"
+    }
+  ) {
+    id
+  }
+}
+
+```
+
+If mutation succeed the new model image will be attached to the model. To check it you can use the `model` query.
 
 ```graphql
 query {
-  getTryOn(taskID: <TASK_ID>) {
-    resultImg
+  model(id: <MODEL_ID>) {
+    id
+    images {
+      id
+      type
+      url
+    }
   }
 }
 ```
-
-After some short period of time you will get image url in the `resultImg` field. You can use it to show the try on result to the user.
-
-That's all! You have successfully created a try on with Genera API. Now you can show the result to the user and get feedback from them.

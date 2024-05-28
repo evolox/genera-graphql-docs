@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: try-on
-title: TryOn
+id: generation-history
+title: generationHistory
 ---
 
 
@@ -41,38 +41,35 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-This type defines the result of the try on generation task.
+Returns paginated list of generation results for user or member.
 
 
 ```graphql
-type TryOn {
-  generationResult: GenerationResult
-  error: String
-}
+generationHistory(
+  input: GenerationResultInput
+): GenerationResultPage!
 ```
 
 
 
 
-### Fields
+### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>TryOn.<b>generationResult</b></code>](#)<Bullet />[`GenerationResult`](/types/objects/generation-result) <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>generationHistory.<b>input</b></code>](#)<Bullet />[`GenerationResultInput`](/types/inputs/generation-result-input) <Badge class="badge badge--secondary" text="input"/> 
 > 
 > 
-> Generation result data including result image and entities used for the generation.
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>TryOn.<b>error</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> Error message if the generation failed.
+
+### Type
+
+#### [`GenerationResultPage`](/types/objects/generation-result-page) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
 > 
 
 
 
 
-
-### Returned By
-
-[`getTryOnResult`](/api/queries/get-try-on-result)  <Badge class="badge badge--secondary" text="query"/>
 

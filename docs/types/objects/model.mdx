@@ -53,8 +53,12 @@ type Model {
   heightUnit: HeightUnit
   weight: Float
   weightUnit: WeightUnit
+  gender: Gender
   skinTone: String
+  bodyType: BodyType
+  age: Int
   createdDate: Date!
+  updatedDate: Date
   images: [ModelImage]
 }
 ```
@@ -100,16 +104,40 @@ type Model {
 > Weight unit is an enum that represents the weight unit of the model. E.g. 'KG', 'LBS'.
 > 
 
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>gender</b></code>](#)<Bullet />[`Gender`](/types/enums/gender) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Gender value helps to create more detailed generation results.
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>Model.<b>skinTone</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > Skin tone is a string that represents the skin tone of the model. It accepts HEX color. E.g. '#FFD700', '#FF6347'.
 > 
 
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>bodyType</b></code>](#)<Bullet />[`BodyType`](/types/enums/body-type) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Body type is a field that defines body type mask for the generation.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>age</b></code>](#)<Bullet />[`Int`](/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Age field helps to generate try on with correct skin texture.
+> 
+
 #### [<code style={{ fontWeight: 'normal' }}>Model.<b>createdDate</b></code>](#)<Bullet />[`Date!`](/types/scalars/date) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > Created date is a date when the model was created.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>updatedDate</b></code>](#)<Bullet />[`Date`](/types/scalars/date) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Date when last update was applied to the model.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>Model.<b>images</b></code>](#)<Bullet />[`[ModelImage]`](/types/objects/model-image) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 

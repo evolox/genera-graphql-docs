@@ -46,11 +46,14 @@ This input is used to create a new model. The model is a digital representation 
 
 ```graphql
 input CreateModelInput {
-  name: String!
+  name: String
   height: Float
   heightUnit: HeightUnit
   weight: Float
   weightUnit: WeightUnit
+  gender: Gender
+  bodyType: BodyType
+  age: Int
   skinTone: String
 }
 ```
@@ -60,7 +63,7 @@ input CreateModelInput {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>CreateModelInput.<b>name</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>CreateModelInput.<b>name</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > Name is a required field. It is a string representation of the name of the model.
@@ -88,6 +91,24 @@ input CreateModelInput {
 > 
 > 
 > Weight unit is an enum that represents the weight unit of the model.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateModelInput.<b>gender</b></code>](#)<Bullet />[`Gender`](/types/enums/gender) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Gender value helps to create more detailed generation results.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateModelInput.<b>bodyType</b></code>](#)<Bullet />[`BodyType`](/types/enums/body-type) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Body type is a field that defines body type mask for the generation.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateModelInput.<b>age</b></code>](#)<Bullet />[`Int`](/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Age field helps to generate try on with correct skin texture.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>CreateModelInput.<b>skinTone</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 

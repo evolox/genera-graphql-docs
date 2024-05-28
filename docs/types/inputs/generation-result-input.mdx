@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: paginated-input
-title: PaginatedInput
+id: generation-result-input
+title: GenerationResultInput
 ---
 
 
@@ -41,13 +41,14 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-That is an input that represents pagination parameters.
+No description
 
 
 ```graphql
-input PaginatedInput {
-  page: Int
-  limit: Int
+input GenerationResultInput {
+  memberId: ID
+  userId: ID
+  pagination: PaginatedInput
 }
 ```
 
@@ -56,13 +57,19 @@ input PaginatedInput {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>PaginatedInput.<b>page</b></code>](#)<Bullet />[`Int`](/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>GenerationResultInput.<b>memberId</b></code>](#)<Bullet />[`ID`](/types/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PaginatedInput.<b>limit</b></code>](#)<Bullet />[`Int`](/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>GenerationResultInput.<b>userId</b></code>](#)<Bullet />[`ID`](/types/scalars/id) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>GenerationResultInput.<b>pagination</b></code>](#)<Bullet />[`PaginatedInput`](/types/inputs/paginated-input) <Badge class="badge badge--secondary" text="input"/> 
 > 
 > 
 > 
@@ -74,5 +81,5 @@ input PaginatedInput {
 
 ### Member Of
 
-[`BrandsInput`](/types/inputs/brands-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`brandUsers`](/api/queries/brand-users)  <Badge class="badge badge--secondary" text="query"/><Bullet />[`GenerationResultInput`](/types/inputs/generation-result-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ModelsInput`](/types/inputs/models-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ProductsInput`](/types/inputs/products-input)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`UsersInput`](/types/inputs/users-input)  <Badge class="badge badge--secondary" text="input"/>
+[`generationHistory`](/api/queries/generation-history)  <Badge class="badge badge--secondary" text="query"/>
 

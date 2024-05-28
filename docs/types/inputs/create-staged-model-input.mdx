@@ -51,6 +51,8 @@ input CreateStagedModelInput {
   heightUnit: HeightUnit
   weight: Float
   weightUnit: WeightUnit
+  gender: Gender
+  age: Int
   skinTone: String!
 }
 ```
@@ -82,6 +84,18 @@ input CreateStagedModelInput {
 > 
 > 
 > Weight unit is an enum that represents the weight unit of the model.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateStagedModelInput.<b>gender</b></code>](#)<Bullet />[`Gender`](/types/enums/gender) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Gender value helps to create more detailed generation results.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateStagedModelInput.<b>age</b></code>](#)<Bullet />[`Int`](/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> Age field helps to generate try on with correct skin texture.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>CreateStagedModelInput.<b>skinTone</b></code>](#)<Bullet />[`String!`](/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 

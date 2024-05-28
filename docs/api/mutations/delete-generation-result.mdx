@@ -1,8 +1,8 @@
 ---
 pagination_next: null
 pagination_prev: null
-id: try-on
-title: TryOn
+id: delete-generation-result
+title: deleteGenerationResult
 ---
 
 
@@ -41,38 +41,35 @@ export const Details = ({ dataOpen, dataClose, children, startOpen = false }) =>
 
 
 
-This type defines the result of the try on generation task.
+This mutation deletes a try on generation result from the history. You can delete only generations that you own.
 
 
 ```graphql
-type TryOn {
-  generationResult: GenerationResult
-  error: String
-}
+deleteGenerationResult(
+  id: ID!
+): OperationResult!
 ```
 
 
 
 
-### Fields
+### Arguments
 
-#### [<code style={{ fontWeight: 'normal' }}>TryOn.<b>generationResult</b></code>](#)<Bullet />[`GenerationResult`](/types/objects/generation-result) <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>deleteGenerationResult.<b>id</b></code>](#)<Bullet />[`ID!`](/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> Generation result data including result image and entities used for the generation.
-> 
-
-#### [<code style={{ fontWeight: 'normal' }}>TryOn.<b>error</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
 > 
 > 
-> Error message if the generation failed.
+
+### Type
+
+#### [`OperationResult`](/types/objects/operation-result) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> That type represents a status of the operation which should return any data.
 > 
 
 
 
 
-
-### Returned By
-
-[`getTryOnResult`](/api/queries/get-try-on-result)  <Badge class="badge badge--secondary" text="query"/>
 

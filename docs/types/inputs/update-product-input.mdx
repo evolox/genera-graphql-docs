@@ -48,6 +48,8 @@ This input is used to update an existing product. All fields are optional. You c
 input UpdateProductInput {
   name: String
   category: String
+  brandDisplayName: String
+  private: Boolean
   type: ProductType
   price: Float
   length: ProductLength
@@ -73,6 +75,18 @@ input UpdateProductInput {
 > 
 > 
 > Product category. Can be any non-empty string. E.g. 'Cardigan', 'Jeans', 'T-shirt'.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>brandDisplayName</b></code>](#)<Bullet />[`String`](/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> That field represents brand name if product is created for the member.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>private</b></code>](#)<Bullet />[`Boolean`](/types/scalars/boolean) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> That field defines if product will be visible in the list of all products.
 > 
 
 #### [<code style={{ fontWeight: 'normal' }}>UpdateProductInput.<b>type</b></code>](#)<Bullet />[`ProductType`](/types/enums/product-type) <Badge class="badge badge--secondary" text="enum"/> 
